@@ -1,0 +1,111 @@
+{
+  "_args": [
+    [
+      "oclazyload",
+      "C:\\Users\\5200012\\Desktop\\mean_stack"
+    ]
+  ],
+  "_from": "oclazyload@latest",
+  "_id": "oclazyload@1.0.9",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/oclazyload",
+  "_nodeVersion": "4.1.1",
+  "_npmUser": {
+    "email": "olivier.combe@gmail.com",
+    "name": "ocombe"
+  },
+  "_npmVersion": "3.3.4",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "oclazyload",
+    "raw": "oclazyload",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/oclazyload/-/oclazyload-1.0.9.tgz",
+  "_shasum": "3979f973c154dff452603aa0a7e0a180beb0a775",
+  "_shrinkwrap": null,
+  "_spec": "oclazyload",
+  "_where": "C:\\Users\\5200012\\Desktop\\mean_stack",
+  "author": {
+    "email": "olivier.combe@gmail.com",
+    "name": "Olivier Combe"
+  },
+  "bugs": {
+    "url": "https://github.com/ocombe/ocLazyLoad/issues"
+  },
+  "dependencies": {},
+  "description": "Load modules on demand (lazy load) with angularJS",
+  "devDependencies": {
+    "bower": "~1.4.1",
+    "gulp": "~3.9.0",
+    "gulp-babel": "~5.1.0",
+    "gulp-clean": "~0.3.1",
+    "gulp-concat": "~2.5.2",
+    "gulp-exec": "~2.1.1",
+    "gulp-header": "~1.2.2",
+    "gulp-json-editor": "~2.2.1",
+    "gulp-ng-annotate": "~1.0.0",
+    "gulp-prompt": "~0.1.2",
+    "gulp-rename": "~1.2.2",
+    "gulp-uglify": "~1.2.0",
+    "jasmine-core": "~2.3.4",
+    "karma": "~0.12.35",
+    "karma-babel-preprocessor": "~5.2.1",
+    "karma-chrome-launcher": "~0.1.12",
+    "karma-cli": "~0.0.4",
+    "karma-coverage": "~0.3.1",
+    "karma-firefox-launcher": "~0.1.6",
+    "karma-jasmine": "~0.3.5",
+    "qq": "~0.3.5",
+    "requirejs": "~2.1.18",
+    "run-sequence": "~1.1.0",
+    "semver": "~4.3.6",
+    "streamqueue": "~0.1.3"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "dist": {
+    "shasum": "3979f973c154dff452603aa0a7e0a180beb0a775",
+    "tarball": "https://registry.npmjs.org/oclazyload/-/oclazyload-1.0.9.tgz"
+  },
+  "gitHead": "fd79b814a0e14f10b159fe264a7db5871e485f53",
+  "homepage": "https://github.com/ocombe/ocLazyLoad",
+  "keywords": [
+    "lazy load",
+    "lazy-load",
+    "load on demand",
+    "module",
+    "angular",
+    "angularJS"
+  ],
+  "license": "MIT",
+  "main": "dist/ocLazyLoad.js",
+  "maintainers": [
+    {
+      "email": "olivier.combe@gmail.com",
+      "name": "ocombe"
+    }
+  ],
+  "name": "oclazyload",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ocombe/ocLazyLoad.git"
+  },
+  "scripts": {
+    "bower": "bower install",
+    "build": "gulp build-minify",
+    "test": "karma start karma.conf.js",
+    "test-dev": "karma start karma.conf.js --single-run=false"
+  },
+  "version": "1.0.9"
+}

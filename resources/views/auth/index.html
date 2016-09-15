@@ -1,0 +1,38 @@
+<!doctype html>
+
+
+<html>
+<head>
+	<base href="/">
+	<title>Login</title>	
+
+	<!--styles-->
+	<link rel="stylesheet" type="text/css" href="public/css/app.css">
+	
+ 		
+
+</head>
+<body ng-app="auth" ng-controller="AuthController as ac">
+
+
+	<div id="main">
+
+		
+			<div ui-view="header"></div>
+			<div ui-view="content" class="content"></div>
+
+
+	</div>
+
+	<!--scripts-->
+	<script type="text/javascript" src="public/js/vendor/angular/angular.min.js"></script>
+	<script type="text/javascript" src="public/js/vendor/angular/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="public/js/vendor/oclazyload/dist/oclazyload.js"></script>
+	<script type="text/javascript" src="public/js/app/auth/auth.module.js"></script>
+	<script type="text/javascript" src="public/js/app/auth/auth.controller.js"></script>
+	<script type="text/javascript" src="public/js/app/auth/auth.config.js"></script>
+	<script type="text/javascript" src="public/js/app/auth/auth.factory.js"></script>
+	<script type="text/javascript" src="public/js/app/app.module.js"></script>
+	<script type="text/javascript" src="public/js/app/app.factory.js"></script>
+</body>
+</html>
