@@ -2,8 +2,8 @@
 
 	angular.module('auth')
 		.config(config);
-	config.$inject = ['$stateProvider','$urlRouterProvider','$locationProvider'];
-	function config($stateProvider,$urlRouterProvider,$locationProvider){
+	config.$inject = ['$stateProvider','$urlRouterProvider','$locationProvider','$httpProvider'];
+	function config($stateProvider,$urlRouterProvider,$locationProvider,$httpProvider){
 		console.log('sdsd');
 		$urlRouterProvider.otherwise("page not found");
 		$stateProvider
@@ -22,7 +22,6 @@
 					}
 				}
 			});
-
 
 		$locationProvider.html5Mode(true);
 

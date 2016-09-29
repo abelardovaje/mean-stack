@@ -1,7 +1,7 @@
 var route = require('../vendor/router');
 var path = require('path');
 var middlewares = require('./middlewares/middlewares');	
-
+var passport = require('passport');
 module.exports = {
 
 	load:function(app){
@@ -23,14 +23,15 @@ module.exports = {
 		| 
 		*/
 
-		route.get('/login','AuthenticationController@login',middlewares.auth);
-		route.get('/register','AuthenticationController@register',middlewares.auth);
-		route.get('/','HomeController@index');				
-		route.get('/store','HomeController@store');
-  		route.get('/create','HomeController@create');
-
-  		route.post('/login','AuthenticationController@login');
-
+		route.get('/login','UserController@login',middlewares.auth);
+		route.get('/register','UserController@register',middlewares.auth);		
+  		route.post('/login','UserController@login');
+  		route.post('/register','UserController@register');
+  		app.get('/logout',function(req,res){
+  			req.logout();
+  			res.redirect('/');
+  		});
+				
 		route.all('/*',function(req,res){
 
 			res.sendFile(path.join(__dirname, '../resources/views', 'index.html'));

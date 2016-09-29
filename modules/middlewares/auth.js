@@ -1,6 +1,6 @@
 module.exports = function(req,res,next){
 			
-			if(req.session.islogin1){
+			if(req.isAuthenticated()){
 				res.redirect('/');
 				return;
 			}

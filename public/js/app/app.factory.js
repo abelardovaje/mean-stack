@@ -23,7 +23,7 @@
 			}
 
 			function post(url,data){
-				return $http.post(url,{data:data}).then(function(response){
+				return $http.post(url,data).then(function(response){
 					
 					return response.data;
 

@@ -6,11 +6,19 @@
 		authController.$inject = ['auth'];
 		function authController(auth){
 			var vm = this;
-			console.log('auth controller');
-			
+			vm.username = '';
+			vm.password ='';
 
 			vm.login = function(){
-				auth.login();
+				
+				auth.login({username:vm.username,password:vm.password});
+
+			}
+
+			vm.register = function(){
+
+				auth.register({username:vm.username,password:vm.password});
+				
 			}
 
 

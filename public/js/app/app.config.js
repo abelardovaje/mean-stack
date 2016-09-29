@@ -30,7 +30,7 @@
 
 					}		
 				})	
-				.state('Tournament',{
+				.state('tournament',{
 					url:'/tournament',
 					views:{
 						'content':{
@@ -40,7 +40,7 @@
 					
 				});			
 				
-
+				
 			 $locationProvider.html5Mode(true);
 		}
 

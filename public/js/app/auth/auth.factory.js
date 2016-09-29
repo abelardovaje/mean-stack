@@ -13,15 +13,30 @@
 			}
 
 			function login(credentials){
+				
+				$.post('/login',credentials).then(function(res){
 
-				$.post('/login',{id:1}).then(function(res){
-					console.log(res);
-					window.location.assign('/');
+					if(res){
+						window.location.assign('/');
+					}else{
+						alert('Invalid credentials');
+					}							
+					
+				},function(err){
+					console.log(err);
 				});
 
 			}
 
-			function register(){
+			function register(data){
+
+				$.post('/register',data).then(function(res){
+					if(res){
+						window.location.assign('/');
+					}else{
+						alert('username already exist');
+					}
+				});
 
 			}
 		}
