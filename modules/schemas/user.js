@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),Schema = mongoose.Schema;
 var crypto = require('crypto');
 
  var userSchema = new mongoose.Schema({
@@ -13,14 +13,16 @@ var crypto = require('crypto');
  	},
  	password:{
  		type:String,
- 		require:true
+ 		require:true,
+ 		select:false
  	},
  	status:{
  		type:String
  	},
  	create_at:{
  		type:Date
- 	}
+ 	},
+ 	roomMembers:[{type:Schema.Types.ObjectId,ref:'RoomMembers'}]
 
  });
 

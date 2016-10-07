@@ -30,7 +30,7 @@ module.exports = function(app){
 	});
 
 	passport.deserializeUser(function(id,done){
-		schemas.user.findById(id,{'name':1, 'email':1,'status':1},function(err,user){
+		schemas.user.findById(id,function(err,user){			
 			done(err,user);
 		})
 	});

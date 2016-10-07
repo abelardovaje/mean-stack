@@ -23,8 +23,7 @@ module.exports = {
 	},
 	post:function(uri,controller,auth){
 
-		var str = controller.split('@');
-		console.log(auth);		
+		var str = controller.split('@');		
 		this.config.app.post(uri,(auth) ? auth : this.config.callback,ctrl(str[0],str[1]));
 
 	},

@@ -1,0 +1,40 @@
+<div class="container room-container">
+
+	<div class="row">
+		<div class="col-lg-2 col-sm-2 col-xs-2">
+			<div class="title">
+				Members
+			</div>
+			<ul class="list-group">
+				<li class="list-group-item"ng-repeat="member in rc.members">
+					<span ng-bind="member.username"></span>
+				</li>
+			</ul>
+
+		</div>
+		<div class="col-lg-10 col-sm-10 col-xs-10">
+
+			<div class="chat-timeline">
+
+
+			</div>
+
+			<div class="chat-response">
+
+				<div class="row">
+					<div class="col-lg-10">
+						<textarea placeholder="Message"></textarea>
+					</div>
+					<div class="col-lg-2">
+						<button class="btn btn-primary send">Send</button>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+		
+	</div>
+
+</div>

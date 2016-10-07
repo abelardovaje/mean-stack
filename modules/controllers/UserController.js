@@ -8,7 +8,8 @@ module.exports = function (method){
 
 		login:login,
 		register:register,
-		getuser
+		getuser:getuser,
+		isLogin:isLogin
 		
 	};
 
@@ -91,6 +92,12 @@ module.exports = function (method){
 	function getuser(){
 		return function(req,res,next){
 			res.json(req.user)
+		}
+	}
+
+	function isLogin(){
+		return function(req,res,next){
+			res.json(req.isAuthenticated())
 		}
 	}
 

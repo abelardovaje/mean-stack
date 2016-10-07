@@ -1,7 +1,8 @@
 (function(){
 
 	angular.module('auth',[		
-		'app'
+		'ui.router',
+		'oc.lazyLoad',
 	]);
 
 

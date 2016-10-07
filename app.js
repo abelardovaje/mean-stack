@@ -12,6 +12,7 @@ var csrf = require('csurf')
 var server = http.createServer(app);
 var csrfProtection = csrf({ cookie: true })
 app.use("/public", express.static(__dirname + '/public'));
+app.use("/node_modules", express.static(__dirname + '/node_modules'));
 app.use('/',express.static(__dirname+'/resources/views'));
 var jwt = require('jsonwebtoken');
 var helmet = require('helmet');
@@ -51,11 +52,13 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function (err, req, res, next) {
-  if (err.code !== 'EBADCSRFTOKEN') return next(err);
 
-  // handle CSRF token errors here
-  res.status(403);
-  res.send('Invalid token');
+  // if (err.code !== 'EBADCSRFTOKEN') return next(err);
+
+  // // handle CSRF token errors here
+  // res.status(403);
+  // res.send('Invalid token');
+  next();
 })
 
 
@@ -81,7 +84,7 @@ db.once('open', function() {
   console.log('connected to db');
 });
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/chat');
 
 
 /*

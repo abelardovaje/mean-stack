@@ -22,15 +22,24 @@ module.exports = {
 		| and give it the controller to call when that URI is requested.
 		| 
 		*/
-
+		app.post('/api',function(req,res,next){
+			res.send('hello');
+		});
 		route.get('/login','UserController@login',middlewares.auth);
 		route.get('/register','UserController@register',middlewares.auth);		
   		route.post('/login','UserController@login');
+  		route.get('/isLogin','UserController@isLogin');
   		route.post('/register','UserController@register');
   		app.get('/logout',function(req,res){
   			req.logout();
   			res.redirect('/');
   		});
+
+
+  		//Rooms
+  		route.get('/loadrooms','RoomController@loadRooms');
+  		route.post('/joinroom','RoomController@joinRoom');
+  		route.post('/leaveroom','RoomController@leaveRoom');
 				
 		route.all('/*',function(req,res){
 

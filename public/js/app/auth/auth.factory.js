@@ -3,9 +3,9 @@
 	angular.module('auth')
 		.factory('auth',auth);
 
-		auth;$inject = ['$'];
+		auth;$inject = ['$http'];
 
-		function auth($){
+		function auth($http){
 
 			return {
 				login:login,
@@ -14,9 +14,9 @@
 
 			function login(credentials){
 				
-				$.post('/login',credentials).then(function(res){
+				$http.post('/login',credentials).then(function(res){
 
-					if(res){
+					if(res.data){
 						window.location.assign('/');
 					}else{
 						alert('Invalid credentials');
@@ -30,8 +30,8 @@
 
 			function register(data){
 
-				$.post('/register',data).then(function(res){
-					if(res){
+				$http.post('/register',data).then(function(res){
+					if(res.data){
 						window.location.assign('/');
 					}else{
 						alert('username already exist');
