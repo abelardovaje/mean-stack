@@ -28,42 +28,52 @@
 	<div class="container">
 
 		<div class="row room-thumbnails">
-		  <div class="col-sm-6 col-md-3">
+
+		  <div class="col-sm-6 col-md-3" ng-repeat="room in hc.rooms" ui-sref="room({id:room._id})" >
 		    <div class="thumbnail">
 		    	
-		    	 <div class="thumbnail-info">
+		    	<div class="thumbnail-info">
 
 		    	 	<div class="room-name">
-		     			Sample
+		     			{{room.name}}
 		     		</div>
 
-		    	 </div>		     	
+		     		<div class="room-menu">sds</div>
+
+		    	</div>		     	
 		     
 		    </div>
-		  </div>
 
-		  <div class="col-sm-6 col-md-3">
-		    <div class="thumbnail">
-		    	
-		    	 <div class="thumbnail-info">
+		  </div>		
+	    </div>
+	    <div class="rtc-sample">
 
-		    	 	<div class="room-name">
-		     			Sample
-		     		</div>
+	    	<div class="login">
+	    		<h3>Login</h3>
+	    		<p>
+	    			<input type="text" placeholder="username" ng-model="ac.username">
+	    			<button ng-click="ac.login()">Login</button>
+	    		</p>
+	    	</div>
+	    	<div>
+	    		<button ng-click="ac.call()">Start call</button>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-lg-4">
+	    			<h2>Local video</h2>
+					<video id="localvideo" src autoplay></video>
+	    		</div>
+	    		<div class="col-lg-4">
+	    			<h2>Remote video</h2>
+					<video id="remotevideo" src autoplay></video>
 
-		    	 </div>		     	
-		     
-		    </div>
-		  </div>
-		</div>
+	    		</div>
+	    	</div>
 
-		<!-- <ul class="list-group">
-			<li class="list-group-item"ng-repeat="room in hc.rooms" id="{{room._id}}" ui-sref="room({id:room._id})">
-				{{room.name}}
-			</li>
-		</ul> -->
+			
+
+	    </div>
+		
 	</div>
-
-
 </div>
 

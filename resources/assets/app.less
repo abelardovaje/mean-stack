@@ -16,7 +16,6 @@
 			background:white;
 			border:0px solid red;
 			border-radius: 0px;
-			padding: 5px;
     		margin: 0px;
             .navbar-brand{
                 color:@primary;
@@ -72,6 +71,14 @@
 
     .room-list{
         margin-top:20px;
+        .rtc-sample{
+            border:1px solid;
+            display:none;
+            video{
+                border:1px solid #ddd;
+                width:200px;
+            }
+        }
         .section-title{           
              padding:10px;
              font-size:20px;  
@@ -81,8 +88,8 @@
 
         }
 
-        .room-thumbnails{
-           
+        .room-thumbnails{          
+            margin-top:20px;
             .thumbnail{
                 padding:0px;
                 border-radius: 3px;
@@ -102,11 +109,16 @@
                border-bottom:#ddd;
                color:white;
             }
+
+            .room-menu{
+                padding:5px;
+            }
         }
     }
 
     .room-container{
         height:500px;
+        border:1px solid red;
         > .row{
            border:1px solid #ddd;
            height:100%;
@@ -174,6 +186,22 @@
             }
         }       
     }
+
+
+    .webrtc-container{
+       
+       .video-container{
+            border:1px solid #ddd;
+            height:200px;
+            width:200px;
+            margin-bottom:5px;
+            video{
+                width:100%;height:100%;             
+            }
+       }
+
+    }
   }
 
 }
+

@@ -12,18 +12,14 @@
  		
 
 </head>
-<body  ng-controller="appController">
+<body  ng-controller="appController as ac">
 
 
 	<div id="main">
 
-		
-		
-			<div ui-view="header"></div>
-			<div ui-view="content" class="content"></div>
-
-
-
+			
+		<div ui-view="header"></div>
+		<div ui-view="content" class="content"></div>
 
 
 	</div>
@@ -31,6 +27,9 @@
 	<!--scripts-->
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+	<script type="text/javascript" src="node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
+	<script type="text/javascript" src="public/js/app/rtc/adapter.js"></script>
+	<script type="text/javascript" src="public/js/app/rtc/common.js"></script>
 	<script type="text/javascript" src="public/js/vendor/angular/angular.min.js"></script>
 	<script type="text/javascript" src="node_modules/angular-deferred-bootstrap/angular-deferred-bootstrap.min.js"></script>
 	<script type="text/javascript" src="public/js/vendor/angular/angular-ui-router.min.js"></script>

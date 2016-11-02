@@ -16,7 +16,8 @@ app.use("/node_modules", express.static(__dirname + '/node_modules'));
 app.use('/',express.static(__dirname+'/resources/views'));
 var jwt = require('jsonwebtoken');
 var helmet = require('helmet');
-
+var io = require('socket.io')(server);
+var webrtc = require('./vendor/webrtc');
 //MIDDLEWARE
 app.use(cookieParser());
 app.use(csrf({ cookie: true }))
@@ -54,7 +55,6 @@ app.use(function(req, res, next) {
 app.use(function (err, req, res, next) {
 
   // if (err.code !== 'EBADCSRFTOKEN') return next(err);
-
   // // handle CSRF token errors here
   // res.status(403);
   // res.send('Invalid token');
@@ -88,11 +88,49 @@ mongoose.connect('mongodb://localhost/chat');
 
 
 /*
+	socket.io
+*/
+
+io.on('connection',function(socket){
+	console.log('User connected');
+	console.log(socket.id);
+	webrtc(socket);
+	// socket.on('login',function(data){	
+	// 	socket.join(data.uname);
+	// 	console.log('Joining:'+data.uname);
+	// 	socket.emit('login-success');
+	// });
+
+	// socket.on('register',function(data){
+
+	// });
+
+	// socket.on('send-offer',function(data){
+	// 	console.log('sending offer');
+	// 	socket.to(data.client).emit('message',data);
+	// });
+
+	// socket.on('send-answer',function(data){
+	// 	console.log('sending answer');
+	// 	socket.to(data.client).emit('message',data);
+	// });
+
+	// socket.on('send-candidate',function(data){
+	// 	console.log('send-candidate');
+	// 	socket.broadcast.emit('message',data);
+	// });
+
+	
+
+});
+
+/*
 	Start server
 */
 app.set('server',server);
 app.get('server').listen(9000,function(){
 	console.log('listening to port 9000');
+
 });
 
 

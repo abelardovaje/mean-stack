@@ -77,6 +77,32 @@
 					}]
 				
 					
+				})
+				.state('webrtc',{
+					url:'/webrtc',
+					data:{requireLogin:true},
+					views:{
+						'header':{
+							templateUrl:'layouts/header.html'
+						},
+						'content':{
+							templateUrl:'web/webrtc.html',
+							controller:'WebRTCController',
+							controllerAs:'wc'
+						}
+					},
+					resolve:{
+						oclazyload:['$ocLazyLoad',function($ocLazyLoad){
+							return $ocLazyLoad.load([{
+								files:[									
+									'public/js/app/modules/webrtc/webrtc.controller.js',
+									'public/js/app/modules/webrtc/webrtc.factory.js',																									
+								]
+							}])
+						}]
+					},
+
+					
 				});			
 				
 				
