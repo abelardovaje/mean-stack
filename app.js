@@ -17,7 +17,6 @@ app.use('/',express.static(__dirname+'/resources/views'));
 var jwt = require('jsonwebtoken');
 var helmet = require('helmet');
 var io = require('socket.io')(server);
-var webrtc = require('./vendor/webrtc');
 //MIDDLEWARE
 app.use(cookieParser());
 app.use(csrf({ cookie: true }))
@@ -94,33 +93,6 @@ mongoose.connect('mongodb://localhost/chat');
 io.on('connection',function(socket){
 	console.log('User connected');
 	console.log(socket.id);
-	webrtc(socket);
-	// socket.on('login',function(data){	
-	// 	socket.join(data.uname);
-	// 	console.log('Joining:'+data.uname);
-	// 	socket.emit('login-success');
-	// });
-
-	// socket.on('register',function(data){
-
-	// });
-
-	// socket.on('send-offer',function(data){
-	// 	console.log('sending offer');
-	// 	socket.to(data.client).emit('message',data);
-	// });
-
-	// socket.on('send-answer',function(data){
-	// 	console.log('sending answer');
-	// 	socket.to(data.client).emit('message',data);
-	// });
-
-	// socket.on('send-candidate',function(data){
-	// 	console.log('send-candidate');
-	// 	socket.broadcast.emit('message',data);
-	// });
-
-	
 
 });
 

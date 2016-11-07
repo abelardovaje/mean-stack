@@ -12,7 +12,7 @@
  		
 
 </head>
-<body  ng-controller="appController as ac">
+<body  >
 
 
 	<div id="main">
@@ -24,25 +24,26 @@
 
 	</div>
 
-	<!--scripts-->
 
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
-	<script type="text/javascript" src="node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
-	<script type="text/javascript" src="public/js/app/rtc/adapter.js"></script>
-	<script type="text/javascript" src="public/js/app/rtc/common.js"></script>
-	<script type="text/javascript" src="public/js/vendor/angular/angular.min.js"></script>
-	<script type="text/javascript" src="node_modules/angular-deferred-bootstrap/angular-deferred-bootstrap.min.js"></script>
-	<script type="text/javascript" src="public/js/vendor/angular/angular-ui-router.min.js"></script>
-	<script type="text/javascript" src="public/js/vendor/oclazyload/dist/oclazyload.js"></script>
-	<script type="text/javascript" src="public/js/vendor/angular-cookies.min.js"></script>
-	<script type="text/javascript" src="public/js/app/app.bootstrap.js"></script>
-	<script type="text/javascript" src="public/js/app/app.module.js"></script>
-	<script type="text/javascript" src="public/js/app/app.controller.js"></script>
-	<script type="text/javascript" src="public/js/app/app.factory.js"></script>
-	<script type="text/javascript" src="public/js/app/app.config.js"></script>
+	<script type="text/javascript" src="public/bower/angular/angular.min.js"></script>
+	<script type="text/javascript" src="public/bower/angular/angular-ui-router.min.js"></script>
+
+
+	<!--Core-->
+
+	<script type="text/javascript" src="public/modules/core/app/config.js"></script>
+	<script type="text/javascript" src="public/modules/core/app/init.js"></script>
+	<script type="text/javascript" src="public/modules/core/app/route.js"></script>
+
+	<!--Modules-->
+	
+	<script type="text/javascript" src="public/modules/home/home.module.js"></script>
+	<script type="text/javascript" src="public/modules/home/home.controller.js"></script>
 
 	<!--Shared-->
-	<script type="text/javascript" src="public/js/app/modules/shared/navigation/navigation.module.js"></script>
+
+	<script type="text/javascript" src="public/modules/shared/navigation/navigation.module.js"></script>
+
 
 
 </body>
